@@ -1,19 +1,18 @@
 class ALBSInput extends HTMLElement {
   static formAssociated = true;
   static get observedAttributes() {
-    return ["placeholder"];
+    return ["value", "placeholder", "onChange"];
   }
 
   attributeChangedCallback(attr, oldValue, newValue) {
-    console.log(attr);
     this[`_${attr}`] = newValue;
     if (this.input) this.input[attr] = newValue;
   }
   constructor() {
     super();
-    this.counter = 0;
+
     this.internals = this.attachInternals();
-    this.setValue("");
+
     this.input = null;
     const shadow = this.attachShadow({ mode: "closed" });
     const sheet = new CSSStyleSheet();
@@ -48,12 +47,26 @@ class ALBSInput extends HTMLElement {
     this.shadow.querySelector("input").addEventListener("input", (e) => {
       this.setValue(e.target.value);
     });
+    this.setValue(this._value || this.value || "");
   }
 
   setValue(v) {
     this.value = v;
     this.internals.setFormValue(v);
     this.setAttribute("value", this.value);
+    this.dispatchEvent(new Event("change", { bubbles: true }, this.value));
+    this.dispatchEvent(new Event("input", { bubbles: true }, this.value));
+    if (this.onChange) {
+      eval(this.onChange, this.value);
+    }
+
+    const reactHandler = Object.keys(this).find(
+      (key) => key.indexOf("__reactEventHandlers") != -1
+    );
+
+    if (reactHandler && this[reactHandler]) {
+      this[reactHandler].onChange(this.value);
+    }
   }
 
   get type() {
