@@ -15,20 +15,20 @@ class ALBSButton extends HTMLElement {
     console.log("Inner click");
     switch (this.type) {
       case "submit":
-        this.dispatchEvent(new Event("submit"));
+        this.dispatchEvent(new Event("submit", { bubbles: true }));
         if (this.parentElement && this.parentElement.nodeName === "FORM") {
           this.parentElement.requestSubmit();
         }
         break;
       case "reset":
-        this.dispatchEvent(new Event("reset"));
+        this.dispatchEvent(new Event("reset", { bubbles: true }));
         if (this.parentElement && this.parentElement.nodeName === "FORM") {
           this.parentElement.reset();
         }
         break;
 
       default:
-        this.dispatchEvent(new Event("click"));
+        this.dispatchEvent(new Event("click", { bubbles: true }));
         break;
     }
   }
