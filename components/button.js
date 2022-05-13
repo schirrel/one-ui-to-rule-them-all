@@ -7,6 +7,7 @@ class ALBSButton extends HTMLElement {
     if (name === "type") {
       this.type = newValue;
     }
+    this.render();
   }
 
   clickHandler(event) {
@@ -14,43 +15,56 @@ class ALBSButton extends HTMLElement {
     console.log("Inner click");
     switch (this.type) {
       case "submit":
-        this.dispatchEvent(new SubmitEvent("submit", { bubbles: true }));
+        this.dispatchEvent(new Event("submit"));
+        if (this.parentElement && this.parentElement.nodeName === "FORM") {
+          this.parentElement.requestSubmit();
+        }
         break;
       case "reset":
-        this.dispatchEvent(new Event("reset", { bubbles: true }));
+        this.dispatchEvent(new Event("reset"));
+        if (this.parentElement && this.parentElement.nodeName === "FORM") {
+          this.parentElement.reset();
+        }
         break;
 
       default:
-        this.dispatchEvent(new Event("click", { bubbles: true }));
+        this.dispatchEvent(new Event("click"));
         break;
     }
   }
+
+  render() {
+    this.button = document.createElement("button");
+    this.button.type = this.type;
+    this.button.innerHTML = "<slot></slot>";
+    this.button.addEventListener("click", (event) => this.clickHandler(event));
+    this.shadow.innerHTML = "";
+    this.shadow.appendChild(this.button);
+  }
   constructor() {
     super();
-
-    const template = document.createElement("template");
-
-    template.innerHTML = `
-              <button type="${this.type}">  <slot></slot> </button>
-      `;
+    this.type = "button";
 
     const sheet = new CSSStyleSheet();
     sheet.insertRule(`
-
       button{
-          padding: 8px 12px;
-          background: cornflowerblue;
-          outline: none;
-          border: none;
+        background: cornflowerblue;
+        border: none;
+        box-shadow: rgb(0 0 0 / 20%) 2px 2px 5px 1px;
+        cursor: pointer;
+        padding: 8px 12px;
+        outline: none;
+        transition: background 0.4s ease-in-out, box-shadow 0.2s ease-in-out;
       }
   `);
-
+    sheet.insertRule(`
+  button:hover{
+    background: dodgerblue;
+    box-shadow: rgb(0 0 0 / 50%) 0px 0px 4px 1px;
+  }`);
     this.shadow = this.attachShadow({ mode: "open" });
-    const button = document.createElement("button");
-    button.innerHTML = "<slot></slot>";
-    button.addEventListener("click", (event) => this.clickHandler(event));
-    this.shadow.appendChild(button);
     this.shadow.adoptedStyleSheets = [sheet];
+    this.render();
   }
 }
 // Register the Custom Element:

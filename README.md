@@ -5,8 +5,6 @@ Study on using web components for creating a ui components to vanilla, vue and r
 ## current problems found
 ### button
 - vanilla onclick dont work
-- button submit event no trigering form
-
 
 
 

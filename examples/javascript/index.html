@@ -15,11 +15,13 @@
       <input type="email" required /> <br />
       <input type="number" required /> <br />
       <input type="url" required /> <br />
-      <button id="submitNative" type="submit"> Submit</button>
-      <albs-button id="submit" type="submit">
-        Web Component Button - Submit</albs-button
+      <!-- <button id="submitNative" type="submit"> Submit</button> -->
+      <albs-button id="submit" type="submit"
+        >Web Component Button - Submit</albs-button
       >
-
+      <albs-button id="reset" type="reset"
+      >Web Component Button - reset</albs-button
+    >
       <!-- onclick não funciona -->
       <albs-button id="button">
         Web Component Button <span> 0 </span></albs-button
@@ -43,10 +45,7 @@
       });
 
       submit.addEventListener("submit", (event) => {
-        console.log("Outer click");
-      });
-      form.addEventListener("submit", (event) => {
-        console.log("submit");
+        console.log("Outer click - submit");
       });
     </script>
   </body>
