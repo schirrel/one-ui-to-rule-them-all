@@ -11,7 +11,9 @@
 
   <body>
     <form action="">
-      <input type="text" required /> <br />
+      <albs-input type="text" required> </albs-input>
+
+      <br />
       <input type="email" required /> <br />
       <input type="number" required /> <br />
       <input type="url" required /> <br />
@@ -20,8 +22,8 @@
         >Web Component Button - Submit</albs-button
       >
       <albs-button id="reset" type="reset"
-      >Web Component Button - reset</albs-button
-    >
+        >Web Component Button - reset</albs-button
+      >
       <!-- onclick não funciona -->
       <albs-button id="button">
         Web Component Button <span> 0 </span></albs-button
@@ -29,11 +31,13 @@
     </form>
 
     <script src="../../components/button.js"></script>
+    <script src="../../components/input.js"></script>
 
     <script>
       let increment = 0;
       const button = document.querySelector("#button");
       const submit = document.querySelector("#submit");
+      const input = document.querySelector("albs-input");
 
       const form = document.querySelector("form");
       const span = document.querySelector("span");
@@ -47,6 +51,11 @@
       submit.addEventListener("submit", (event) => {
         console.log("Outer click - submit");
       });
+
+      input.addEventListener("input", (event) => {
+        console.log("Outer click - input", event);
+      });
     </script>
   </body>
 </html>
+s
