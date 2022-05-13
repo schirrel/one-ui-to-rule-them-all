@@ -1,0 +1,30 @@
+<html>
+  <body>
+    <div id="app">
+      <albs-button @click="increment">
+        Web Component Button {{ count }}</albs-button
+      >
+    </div>
+    <script src="https://unpkg.com/vue@next"></script>
+    <script>
+      const { ref, createApp } = Vue;
+      createApp({
+        setup() {
+          const count = ref(0);
+
+          const increment = () => {
+            console.log("Outer Vue Click");
+            count.value++;
+          };
+
+          return {
+            count,
+            increment,
+          };
+        },
+      }).mount("#app");
+    </script>
+
+    <script src="../../components/button.js"></script>
+  </body>
+</html>
