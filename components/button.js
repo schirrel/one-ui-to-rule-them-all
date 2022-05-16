@@ -49,7 +49,8 @@ class ALBSButton extends HTMLElement {
     sheet.insertRule(`
       button{
         background: cornflowerblue;
-        border: none;
+        border: 2px solid transparent;
+        border-radius: 20px;
         box-shadow: rgb(0 0 0 / 20%) 2px 2px 5px 1px;
         cursor: pointer;
         padding: 8px 12px;

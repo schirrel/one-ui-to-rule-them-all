@@ -6,6 +6,9 @@ Study on using web components for creating a ui components to vanilla, vue and r
 ### button
 - vanilla onclick dont work
 
+### input
+form validation dont work propertly
+
 
 
 
@@ -14,3 +17,4 @@ Study on using web components for creating a ui components to vanilla, vue and r
 
 # Refs
 - https://web.dev/custom-elements-v1/
+https://web.dev/more-capable-form-controls/
