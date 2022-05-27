@@ -7,4 +7,6 @@ So far we have some options to study:
 - Plain Web Components | [Web Components](https://www.webcomponents.org/) | [Open WC](https://open-wc.org/) 
 - Lit (Polymer evolutions) | [Docs](https://lit.dev/docs/)
 - Mitosis | [Docs](https://github.com/BuilderIO/mitosis) |  [Tutorial](https://blog.logrocket.com/creating-reusable-components-mitosis-builder-io/)
-- Stencil | [Docs](https://stenciljs.com/)
+- Stencil | [Docs](https://stenciljs.com/) | [Example](https://github.com/ionic-team/ionic-framework/tree/main/core)
+
+
