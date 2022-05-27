@@ -1,0 +1,27 @@
+:host {
+  display: flex;
+}
+
+button {
+  display: flex;
+  margin: 4px;
+  background: coral;
+  border-radius: 4px;
+  padding: 4px 8px;
+  border-color: transparent;
+  pointer-events: all;
+  cursor: pointer;
+}
+
+button[type='submit'] {
+  background: cornflowerblue;
+}
+
+button[type='reset'] {
+  background: cadetblue;
+}
+
+button:disabled {
+  cursor: not-allowed;
+  background: silver;
+}
