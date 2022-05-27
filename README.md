@@ -1,20 +1,10 @@
 # one-ui-to-rule-them-all
-Study on using web components for creating a ui components to vanilla, vue and react.
 
+This is a study on web-component or simething-like to build reusable components for both Vue and React.
 
-## current problems found
-### button
-- vanilla onclick dont work
+So far we have some options to study:
 
-### input
-form validation dont work propertly
-
-
-
-
-
-
-
-# Refs
-- https://web.dev/custom-elements-v1/
-https://web.dev/more-capable-form-controls/
+- Plain Web Components | ([Web Components](https://www.webcomponents.org/) | (Open WC)[https://open-wc.org/]) 
+- Lit (Polymer evolutions) | [Docs](https://lit.dev/docs/)
+- Mitosis | [Docs](https://github.com/BuilderIO/mitosis)
+- Stencil | [Docs](https://stenciljs.com/)
