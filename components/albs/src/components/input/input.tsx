@@ -60,12 +60,12 @@ export class Input {
       }),
     );
     this.changeEmitter.emit({ value: this.value.toString() });
-    // if (this.reactHandler) {
-    //   this.element[this.reactHandler].onChange({
-    //     target: this.element,
-    //     data: this.value as string,
-    //   });
-    // }
+    if (this.reactHandler) {
+      this.element[this.reactHandler].onChange({
+        target: this.element,
+        data: this.value as string,
+      });
+    }
   }
   get reactHandler() {
     return Object.keys(this.element).find(key => key.indexOf('__reactEventHandlers') != -1);

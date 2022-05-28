@@ -10,3 +10,22 @@ So far we have some options to study:
 - Stencil | [Docs](https://stenciljs.com/) | [Example](https://github.com/ionic-team/ionic-framework/tree/main/core)
 
 
+
+
+## Stencil
+### Vanilla
+Works like a charm, obviously
+
+### Vue
+Works 99.99% so far, only button `reset` event, but as far as Evan has wrote [here](https://github.com/vuejs/vue/issues/833), its was a decision make during the development of Vue
+
+### React
+So far working pretty well, but we have to take attention to:
+- React form/state change listem to `onChange` event, which is not a native event, so is quite annoying to do a work around.   
+React create a prop at the element called `__reactEventHandlers` plus a hash of the component, this prop has a callable `onChange` function.  
+
+So by now we have two work arounds:
+- have take this props and call `onChange` inside it
+- use the `onInput` instead of `onChange`
+
+As far as i have seen about it, this is pretty much a common solution for any approach.
