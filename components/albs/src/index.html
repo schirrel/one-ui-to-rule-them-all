@@ -7,27 +7,65 @@
 
     <script type="module" src="/build/albs.esm.js"></script>
     <script nomodule src="/build/albs.js"></script>
-    <script>
-      function clickHandler() {
-        console.log('handler');
-      }
-    </script>
+
+    <script src="https://unpkg.com/react@16.7.0/umd/react.production.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/emotion@9.2.12/dist/emotion.umd.min.js"></script>
+    <script src="https://unpkg.com/react-dom@16.7.0/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/prop-types@15.5.10/prop-types.min.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <title>React Select CDN with React and Babel</title>
   </head>
   <body>
-    <my-component first="Stencil" last="'Don't call me a framework' JS"></my-component>
-    <albs-button onclick="clickHandler" id="btn">Meu Botão</albs-button>
-    <albs-button id="btnReset" type="reset">Meu BotãoReset</albs-button>
-    <albs-button id="btnSubmit" type="submit">Meu BotãoSubmit</albs-button>
-    <albs-button id="btnLoading" loading="true">Meu BotãoLoading</albs-button>
-    <albs-button id="btnDisabled" disabled="true">Meu BotãoDisabled</albs-button>
+    <div id="root"></div>
+    <script type="text/babel">
+      class App extends React.Component {
+        state = {
+          count: 0,
+          myValue: "Initial Value",
+        };
+        render() {
+          const { myValue, count } = this.state;
+          const onClick = () => {
+            console.log("Outer React Click");
 
-    <hr />
-    <h2>Form</h2>
-    <form>
-      <input type="text" />
-      <input type="email" required />
-      <albs-button type="submit">Submit</albs-button>
-      <albs-button type="reset">Reset</albs-button>
-    </form>
+            const current = this.state.count;
+            this.setState({ count: current + 1 });
+          };
+
+          const handleChange = (event) => {
+            this.setState({ myValue: event.target.value });
+          };
+
+          const handleSubmit = (event) => {
+            alert("A name was submitted: " + this.state.value);
+            event.preventDefault();
+          };
+
+          return (
+            <div class="container">
+              <br />
+              <albs-button onClick={onClick}>
+                Web Component Button {count}
+              </albs-button>
+              <hr />
+              <h2>Form</h2> - {myValue}
+              <form onSubmit={handleSubmit}>
+                <input type="text" value={myValue} onChange={handleChange} />
+                <input type="email" required />
+
+                <albs-input type="text"value={myValue} onChange={handleChange}> </albs-input>
+                <albs-input type="search" required="true"> </albs-input>
+
+
+                <albs-button type="submit">Submit</albs-button>
+                <albs-button type="reset">Reset</albs-button>
+              </form>
+            </div>
+          );
+        }
+      }
+
+      ReactDOM.render(<App />, document.querySelector("#root"));
+    </script>
   </body>
 </html>

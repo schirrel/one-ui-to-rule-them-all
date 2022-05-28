@@ -1,0 +1,17 @@
+:host {
+  display: flex;
+}
+
+input {
+  display: flex;
+  border-color: coral;
+  border-radius: 4px;
+  padding: 4px 8px;
+}
+
+input:invalid{
+  border-color: crimson;
+}
+input:valid{
+  border-color: cadetblue;
+}

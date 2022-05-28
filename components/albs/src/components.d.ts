@@ -11,6 +11,14 @@ export namespace Components {
         "loading": boolean;
         "type": 'submit' | 'reset' | 'button';
     }
+    interface AlbsInput {
+        "disabled"?: boolean;
+        "inputmode"?: 'none' | 'text' | 'decimal' | 'numeric' | 'tel' | 'search' | 'email' | 'url';
+        "placeholder": string;
+        "required"?: boolean;
+        "type": 'date' | 'datetime-local' | 'email' | 'month' | 'number' | 'password' | 'search' | 'tel' | 'text' | 'time' | 'url' | 'week' | 'datetime';
+        "value"?: string | number | null;
+    }
 }
 declare global {
     interface HTMLAlbsButtonElement extends Components.AlbsButton, HTMLStencilElement {
@@ -19,8 +27,15 @@ declare global {
         prototype: HTMLAlbsButtonElement;
         new (): HTMLAlbsButtonElement;
     };
+    interface HTMLAlbsInputElement extends Components.AlbsInput, HTMLStencilElement {
+    }
+    var HTMLAlbsInputElement: {
+        prototype: HTMLAlbsInputElement;
+        new (): HTMLAlbsInputElement;
+    };
     interface HTMLElementTagNameMap {
         "albs-button": HTMLAlbsButtonElement;
+        "albs-input": HTMLAlbsInputElement;
     }
 }
 declare namespace LocalJSX {
@@ -30,8 +45,18 @@ declare namespace LocalJSX {
         "onClickEmitter"?: (event: CustomEvent<any>) => void;
         "type"?: 'submit' | 'reset' | 'button';
     }
+    interface AlbsInput {
+        "disabled"?: boolean;
+        "inputmode"?: 'none' | 'text' | 'decimal' | 'numeric' | 'tel' | 'search' | 'email' | 'url';
+        "onInputEmitter"?: (event: CustomEvent<any>) => void;
+        "placeholder"?: string;
+        "required"?: boolean;
+        "type"?: 'date' | 'datetime-local' | 'email' | 'month' | 'number' | 'password' | 'search' | 'tel' | 'text' | 'time' | 'url' | 'week' | 'datetime';
+        "value"?: string | number | null;
+    }
     interface IntrinsicElements {
         "albs-button": AlbsButton;
+        "albs-input": AlbsInput;
     }
 }
 export { LocalJSX as JSX };
@@ -39,6 +64,7 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "albs-button": LocalJSX.AlbsButton & JSXBase.HTMLAttributes<HTMLAlbsButtonElement>;
+            "albs-input": LocalJSX.AlbsInput & JSXBase.HTMLAttributes<HTMLAlbsInputElement>;
         }
     }
 }

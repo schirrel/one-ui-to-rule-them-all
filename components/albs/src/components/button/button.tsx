@@ -5,7 +5,7 @@ import { Component, Prop, h, Event, EventEmitter, Element } from '@stencil/core'
   styleUrl: 'button.css',
   shadow: true,
 })
-export class MyComponent {
+export class Button {
   formFunctions = {
     reset: 'reset',
     submit: 'requestSubmit',
