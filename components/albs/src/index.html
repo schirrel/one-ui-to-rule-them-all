@@ -21,41 +21,47 @@
       class App extends React.Component {
         state = {
           count: 0,
-          myValue: "Initial Value",
+          myValue: 'Initial Value',
         };
         render() {
           const { myValue, count } = this.state;
           const onClick = () => {
-            console.log("Outer React Click");
+            console.log('Outer React Click');
 
             const current = this.state.count;
             this.setState({ count: current + 1 });
           };
 
-          const handleChange = (event) => {
+          const handleChange = event => {
             this.setState({ myValue: event.target.value });
           };
 
-          const handleSubmit = (event) => {
-            alert("A name was submitted: " + this.state.value);
+          const handleSubmit = event => {
+            alert('A name was submitted: ' + this.state.value);
             event.preventDefault();
           };
 
           return (
             <div class="container">
               <br />
-              <albs-button onClick={onClick}>
-                Web Component Button {count}
-              </albs-button>
+              <albs-button onClick={onClick}>Web Component Button {count}</albs-button>
               <hr />
               <h2>Form</h2> - {myValue}
               <form onSubmit={handleSubmit}>
                 <input type="text" value={myValue} onChange={handleChange} />
                 <input type="email" required />
 
-                <albs-input type="text"value={myValue} onChange={handleChange}> </albs-input>
-                <albs-input type="search" required="true"> </albs-input>
+                <albs-input type="text" value={myValue} onChange={handleChange}>
+                  {' '}
+                </albs-input>
 
+                <albs-input type="text" value={myValue} onInput={handleChange}>
+                  {' '}
+                </albs-input>
+
+                <albs-input type="search" required="true" onInput={handleChange}>
+                  {' '}
+                </albs-input>
 
                 <albs-button type="submit">Submit</albs-button>
                 <albs-button type="reset">Reset</albs-button>
@@ -65,7 +71,7 @@
         }
       }
 
-      ReactDOM.render(<App />, document.querySelector("#root"));
+      ReactDOM.render(<App />, document.querySelector('#root'));
     </script>
   </body>
 </html>

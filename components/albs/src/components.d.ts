@@ -5,6 +5,7 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
+import { InputChangeEventDetail } from "./components/input/types";
 export namespace Components {
     interface AlbsButton {
         "disabled": boolean;
@@ -48,6 +49,7 @@ declare namespace LocalJSX {
     interface AlbsInput {
         "disabled"?: boolean;
         "inputmode"?: 'none' | 'text' | 'decimal' | 'numeric' | 'tel' | 'search' | 'email' | 'url';
+        "onChangeEmitter"?: (event: CustomEvent<InputChangeEventDetail>) => void;
         "onInputEmitter"?: (event: CustomEvent<any>) => void;
         "placeholder"?: string;
         "required"?: boolean;
