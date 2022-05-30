@@ -17,7 +17,8 @@ export class Input {
   @Prop() type: 'date' | 'datetime-local' | 'email' | 'month' | 'number' | 'password' | 'search' | 'tel' | 'text' | 'time' | 'url' | 'week' | 'datetime' = 'text'; //https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#attributes
 
   @Event() inputEmitter: EventEmitter;
-  @Event() changeEmitter: EventEmitter<InputChangeEventDetail>;
+  @Event() inputChangeEmitter: EventEmitter<InputChangeEventDetail>;
+  @Event() changeEmitter;
 
   @Watch('value')
   protected valueChanged(newValue) {
@@ -43,29 +44,36 @@ export class Input {
       }),
     );
     this.inputEmitter.emit(
-      new InputEvent('change', {
-        data: this.value as string,
-      }),
-    );
-    this.inputEmitter.emit(
       new InputEvent('beforeinput', {
         data: this.value as string,
       }),
     );
+
+    /* nothing of this works with onChange for react
     this.inputEmitter.emit(
       new CustomEvent('change', {
         detail: {
-          value: this.value,
+          value,
         },
       }),
     );
-    this.changeEmitter.emit({ value: this.value.toString() });
-    if (this.reactHandler) {
-      this.element[this.reactHandler].onChange({
-        target: this.element,
+    this.changeEmitter.emit('change', { value });
+
+    this.inputEmitter.emit(
+      new InputEvent('change', {
         data: this.value as string,
-      });
-    }
+      }),
+    );
+    this.inputChangeEmitter.emit({ value: this.value.toString() });
+*/
+
+// only this works with onChange of react
+    // if (this.reactHandler) {
+    //   this.element[this.reactHandler].onChange({
+    //     target: this.element,
+    //     data: this.value as string,
+    //   });
+    // }
   }
   get reactHandler() {
     return Object.keys(this.element).find(key => key.indexOf('__reactEventHandlers') != -1);

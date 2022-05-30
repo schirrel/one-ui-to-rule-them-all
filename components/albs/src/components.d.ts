@@ -49,7 +49,8 @@ declare namespace LocalJSX {
     interface AlbsInput {
         "disabled"?: boolean;
         "inputmode"?: 'none' | 'text' | 'decimal' | 'numeric' | 'tel' | 'search' | 'email' | 'url';
-        "onChangeEmitter"?: (event: CustomEvent<InputChangeEventDetail>) => void;
+        "onChangeEmitter"?: (event: CustomEvent<any>) => void;
+        "onInputChangeEmitter"?: (event: CustomEvent<InputChangeEventDetail>) => void;
         "onInputEmitter"?: (event: CustomEvent<any>) => void;
         "placeholder"?: string;
         "required"?: boolean;
