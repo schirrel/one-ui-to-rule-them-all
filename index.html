@@ -3,25 +3,52 @@
   <head>
     <meta charset="UTF-8" />
     <style>
-      a {
-        margin: 4px;
-        padding: 8px 4px;
-        text-decoration: none;
-        font-weight: 900;
+      body {
+        display: flex;
         font-family: Arial, Helvetica, sans-serif;
-        color: coral;
-        background-color: white;
+        align-items: center;
+        justify-content: center;
+        height: 98vh;
+        flex-direction: column;
+        background-color: aquamarine;
+      }
+      nav {
+        margin: 18px;
+      }
+      a {
+        color: crimson;
+        text-decoration: none;
+        font-weight: bold;
+        padding: 8px 12px;
       }
       a:hover {
-        background-color: coral;
-        color: white;
+        background: crimson;
+        color: wheat
+      }
+
+      footer{
+        position: fixed;
+        bottom: 20px;
+      }
+
+      footer a{
+        color:darkslategrey;
+        font-size: 12px;
+        font-weight: 400;
       }
     </style>
   </head>
 
   <body>
-    <a href="./examples/vue/index.html">Vue</a>
-    <a href="./examples/react/index.html">React</a>
-    <a href="./examples/javascript/index.html">Javascript</a>
+    <h1>Web Components</h1>
+    <nav>
+      <a href="./vanilla/index.html">Vanilla Web Components</a>
+      <a href="./stencil/index.html">Stencil</a>
+      <!-- <a href="./examples/mitosis/index.html">Mitosis</a>
+      <a href="./examples/lit/index.html">Lit</a> -->
+    </nav>
+    <footer>
+      <a href="https://github.com/schirrel/one-ui-to-rule-them-all"> Github</a>
+    </footer>
   </body>
 </html>
