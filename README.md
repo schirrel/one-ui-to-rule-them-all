@@ -28,8 +28,8 @@ Ferramentas objetivo:
 
 ## Button
 
-- type: `button`, `reset`, `submit``
-    - _type button é o default aqui, e vez do submit_
+- type: `button`, `reset`, `submit`
+    - _type button_ é o default aqui, em vez do submit
 
 **Funcionando**:
   - `@click` do Vue
@@ -51,14 +51,13 @@ Ferramentas objetivo:
 
 
 "Gambiarra":
-  - `onChange` do React
-O on change por nao ser um evento nativo não tem listener e nem emmitter.  
+  - `onChange` do React: O `onChange` não ouve o evento nativo de change, mesmo o emitindo de varias maneiras. 
 Analisando o código da pra perceber que o react implementa uma propriedade `__reactEventHandlers` onde esta possui uma função `onChange`.
 
 **Em andamento**
 - Validações de form como required
-## Funcionalidades
 
+## Funcionalidades
 - Button
   - button, submit e reset
 - Input
