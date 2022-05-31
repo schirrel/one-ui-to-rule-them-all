@@ -6,10 +6,10 @@ Este é um estudo sobre web-component ou algo parecido para construir componente
 
 Ferramentas objetivo:
 
-- Web component nativo
-- StencilJS
-- Lit (antigo polymer)
-- Mitosis
+- [x] Web component nativo
+- [ ] StencilJS
+- [ ] Lit (antigo polymer)
+- [ ] Mitosis
 
 ## Autores
 
