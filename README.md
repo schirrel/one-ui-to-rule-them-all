@@ -69,7 +69,7 @@ Analisando o código da pra perceber que o react implementa uma propriedade `__r
 
 - Plain Web Components | [Web Components](https://www.webcomponents.org/) | [Open WC](https://open-wc.org/) 
 - Lit | [Docs](https://lit.dev/docs/)
-- Mitosis | [Docs](https://github.com/BuilderIO/mitosis) |  [Tutorial](https://blog.logrocket.com/creating-reusable-components-mitosis-builder-io/)
+- Mitosis | [Docs](https://github.com/BuilderIO/mitosis) |  [Tutorial](https://blog.logrocket.com/creating-reusable-components-mitosis-builder-io/) | [mitosis issue asked](https://github.com/BuilderIO/mitosis/issues/417)
 - Stencil | [Docs](https://stenciljs.com/)
 ## Demonstração
 
