@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+  <head>
+    <meta charset="utf-8" />
+    <style>
+      body {
+        background: #fafafa;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="demo"></div>
+
+    <script type="module">
+      import { html, render } from "lit";
+      import "../dist/src/albs-button.js";
+
+      const title = "Hello owc World!";
+
+      render(
+        html`
+          <form>
+            <input type="text" required />
+            <albs-button id="reset" type="reset"> My reset button </albs-button>
+
+            <albs-button id="button" type="button"> My button </albs-button>
+
+            <albs-button id="submit" type="submit">
+              My submit button
+            </albs-button>
+
+            <albs-button id="default"> My default button </albs-button>
+
+            <albs-button id="disabled" disabled="true">
+              My disabled button
+            </albs-button>
+
+            <albs-button id="loading" loading="true"> My loading button </albs-button>
+
+          </form>
+        `,
+        document.querySelector("#demo")
+      );
+    </script>
+
+    <script>
+      setTimeout(() => {
+        const clicky = (event) => {
+          console.log(event);
+        };
+        const button = document.querySelector("#button");
+        button.addEventListener("click", clicky);
+
+        const reset = document.querySelector("#reset");
+        reset.addEventListener("reset", clicky);
+
+        const submit = document.querySelector("#submit");
+        submit.addEventListener("submit", clicky);
+
+        const defaultButton = document.querySelector("#default");
+        defaultButton.addEventListener("click", clicky);
+
+        const disabledButton = document.querySelector("#disabled");
+        disabledButton.addEventListener("click", clicky);
+      }, 500);
+    </script>
+  </body>
+</html>
