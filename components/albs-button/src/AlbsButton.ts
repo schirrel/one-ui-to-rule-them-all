@@ -3,17 +3,10 @@ import { property } from "lit/decorators.js";
 
 export class AlbsButton extends LitElement {
 
-  @property({ type: String }) greeting;
-  @property({ type: String }) planet;
-
   @property({ type: String }) type: "submit" | "reset" | "button" = "button";
   @property({ type: Boolean }) disabled = false;
   @property({ type: Boolean }) loading = false;
 
-  static properties = {
-    greeting: {},
-    planet: {},
-  };
   // Styles are scoped to this element: they won't conflict with styles
   // on the main page or in other components. Styling API can be exposed
   // via CSS custom properties.
@@ -77,8 +70,6 @@ export class AlbsButton extends LitElement {
 
   constructor() {
     super();
-    this.greeting = 'Hello';
-    this.planet = 'World';
   }
 
   render() {
@@ -87,14 +78,10 @@ export class AlbsButton extends LitElement {
       <button @click=${this.handleClick}
       ?disabled="${this.disabled}"
         type="${this.type}"
-        >${this.greeting}
-        <span class="planet">${this.planet}</span>
+        >
         ${this.loading
         ? html`<span class="albs-button--loading"></span>`
         : html``}
-
-        disabled? ${this.disabled}
-        ${this.disabled == true ? 'disabled=true' : ''}
         <slot/>
       </button>
     `;
@@ -132,7 +119,5 @@ export class AlbsButton extends LitElement {
         );
         break;
     }
-
-    this.planet = this.planet === 'World' ? 'Mars' : 'World';
   }
 }
