@@ -4,23 +4,27 @@
   "license": "MIT",
   "author": "albs-button",
   "version": "0.0.0",
-  "main": "dist/src/index.js",
-  "module": "dist/src/index.js",
+  "main": "dist/build/index.js",
+  "module": "dist/build/index.js",
   "exports": {
-    ".": "./dist/src/index.js",
-    "./albs-button.js": "./dist/src/albs-button.js"
+    ".": "./dist/index.js"
   },
   "scripts": {
     "analyze": "cem analyze --litelement",
     "start": "tsc && concurrently -k -r \"tsc --watch --preserveWatchOutput\" \"wds\"",
-    "build": "tsc && npm run analyze -- --exclude dist",
-    "prepublish": "tsc && npm run analyze -- --exclude dist"
+    "build:tsc": "tsc && npm run analyze -- --exclude dist",
+    "build:rollup": "rollup -c ",
+    "prepublish": "tsc && npm run analyze -- --exclude dist",
+    "build": "npm run build:tsc && npm run build:rollup"
   },
   "dependencies": {
     "lit": "^2.0.2"
   },
   "devDependencies": {
     "@custom-elements-manifest/analyzer": "^0.4.17",
+    "@rollup/plugin-commonjs": "^22.0.2",
+    "@rollup/plugin-json": "^4.1.0",
+    "@rollup/plugin-node-resolve": "^14.0.0",
     "@web/dev-server": "^0.1.28",
     "concurrently": "^5.3.0",
     "tslib": "^2.3.1",

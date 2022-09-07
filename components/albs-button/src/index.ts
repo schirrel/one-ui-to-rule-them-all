@@ -1,1 +1,1 @@
-export { AlbsButton } from './AlbsButton.js';
+import './albs-button'
