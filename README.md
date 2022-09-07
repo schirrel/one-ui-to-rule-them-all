@@ -8,7 +8,7 @@ Ferramentas objetivo:
 
 - [x] Web component nativo
 - [x] StencilJS
-- [-] Lit (antigo polymer)
+- [ ] Lit (antigo polymer) - EM ANDAMENTO
 - [ ] Mitosis
 
 ## Autores
