@@ -10,7 +10,7 @@
     "allowSyntheticDefaultImports": true,
     "experimentalDecorators": true,
     "importHelpers": true,
-    "outDir": "../dist/button",
+    "outDir": "dist/build",
     "sourceMap": true,
     "inlineSources": true,
     "rootDir": "./",
