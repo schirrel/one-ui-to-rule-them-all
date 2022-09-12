@@ -8,21 +8,32 @@ Ferramentas objetivo:
 
 - [x] Web component nativo
 - [x] StencilJS
-- [ ] Lit (antigo polymer) - EM ANDAMENTO
+- [x] Lit (antigo polymer)
 - [ ] Mitosis
 
 ## Autores
 
 - [@schirrel](https://www.github.com/schirrel)
 
+## Componentes
+- Button
+   - type: button, submit e reset
+   - adicionado customização de loading
+- Input
+  - com value sendo indentificado pelos frameworks
+  - tipos de acordo com MDN
 
-## Branch
+## Estrutura
+### Componentes
+- `lit`: desenvolvimento de componentes com Lit
+- `stencil`: desenvolvimento de componentes com Stencil
+- `vanilla-js`: desenvolvimento de componentes com web componentes 100% javascript puro
 
-|  Branch  |                     |
-| :---------- | :--------- | 
-| `vanilla` |  Web components sem framework| 
-| `stencil` |  Web components com [StencilJS](https://stenciljs.com/)| 
 
+### Examples
+- `lit`: exemplos dos componentes desenvolvidos com Lit
+- `stencil`: exemplos dos componentes desenvolvidos com Stencil
+- `vanilla-js`: exemplos dos componentes desenvolvidos com web componentes 100% javascript puro
 
 ## Documentação
 
@@ -47,7 +58,7 @@ Ferramentas objetivo:
 
 **Funcionando**:
   - `v-model` do Vue
-  - `onInput` do React
+  - `onInput` do React (Exceto no Lit)
 
 
 "Gambiarra":
