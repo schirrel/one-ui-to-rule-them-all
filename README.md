@@ -1,31 +1,76 @@
-# one-ui-to-rule-them-all
+# One UI to rule them all
 
-This is a study on web-component or simething-like to build reusable components for both Vue and React.
+## Apêndice
 
-So far we have some options to study:
+Este é um estudo sobre web-component ou algo parecido para construir componentes reutilizáveis para Vue e React.
+
+Ferramentas objetivo:
+
+- [x] Web component nativo
+- [x] StencilJS
+- [ ] Lit (antigo polymer) - EM ANDAMENTO
+- [ ] Mitosis
+
+## Autores
+
+- [@schirrel](https://www.github.com/schirrel)
+
+
+## Branch
+
+|  Branch  |                     |
+| :---------- | :--------- | 
+| `vanilla` |  Web components sem framework| 
+| `stencil` |  Web components com [StencilJS](https://stenciljs.com/)| 
+
+
+## Documentação
+
+## Button
+
+- type: `button`, `reset`, `submit`
+    - _type button_ é o default aqui, em vez do submit
+
+**Funcionando**:
+  - `@click` do Vue
+  - `onClick` do React
+  - `addEventListener("click"` do JS vanilla
+
+**Não funciona**:
+- `onclick` nativo no Elemento.
+
+
+## Input
+
+- type: todos os types que estão no MDN
+
+
+**Funcionando**:
+  - `v-model` do Vue
+  - `onInput` do React
+
+
+"Gambiarra":
+  - `onChange` do React: O `onChange` não ouve o evento nativo de change, mesmo o emitindo de varias maneiras. 
+Analisando o código da pra perceber que o react implementa uma propriedade `__reactEventHandlers` onde esta possui uma função `onChange`.
+
+**Em andamento**
+- Validações de form como required
+
+## Funcionalidades
+- Button
+  - button, submit e reset
+- Input
+  - com atualização de value no framework
+  - validação de form - EM ANDAMENTO
+
+
+## Referência
 
 - Plain Web Components | [Web Components](https://www.webcomponents.org/) | [Open WC](https://open-wc.org/) 
-- Lit (Polymer evolutions) | [Docs](https://lit.dev/docs/)
-- Mitosis | [Docs](https://github.com/BuilderIO/mitosis) |  [Tutorial](https://blog.logrocket.com/creating-reusable-components-mitosis-builder-io/)
-- Stencil | [Docs](https://stenciljs.com/) | [Example](https://github.com/ionic-team/ionic-framework/tree/main/core)
+- Lit | [Docs](https://lit.dev/docs/)
+- Mitosis | [Docs](https://github.com/BuilderIO/mitosis) |  [Tutorial](https://blog.logrocket.com/creating-reusable-components-mitosis-builder-io/) | [mitosis issue asked](https://github.com/BuilderIO/mitosis/issues/417)
+- Stencil | [Docs](https://stenciljs.com/)
+## Demonstração
 
-
-
-
-## Stencil
-### Vanilla
-Works like a charm, obviously
-
-### Vue
-Works 99.99% so far, only button `reset` event, but as far as Evan has wrote [here](https://github.com/vuejs/vue/issues/833), its was a decision make during the development of Vue
-
-### React
-So far working pretty well, but we have to take attention to:
-- React form/state change listem to `onChange` event, which is not a native event, so is quite annoying to do a work around.   
-React create a prop at the element called `__reactEventHandlers` plus a hash of the component, this prop has a callable `onChange` function.  
-
-So by now we have two work arounds:
-- have take this props and call `onChange` inside it
-- use the `onInput` instead of `onChange`
-
-As far as i have seen about it, this is pretty much a common solution for any approach.
+[Demo](https://schirrel.dev/one-ui-to-rule-them-all/)
