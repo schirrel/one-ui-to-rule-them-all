@@ -1,0 +1,56 @@
+<html>
+  <head>
+    <script type="module" src="./esm/polyfills//index.js"></script>
+
+    <script type="module" src="./esm/albs.js"></script>
+    <script type="module" src="./esm/index-19825f49.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      {{message}}
+      </albs-input>
+      <albs-button @click="increment">
+        Web Component Button {{ count }}</albs-button
+      >
+
+      <hr />
+      <h2>Form</h2>
+      <form v-on:submit="submittedForm">
+        <input type="text"  v-model="message" /> <input type="email" required="" />
+        <albs-button type="submit">Submit</albs-button>
+        <albs-button type="reset">Reset</albs-button>
+      </form>
+    </div>
+    <script src="./vue.js"></script>
+    <script>
+      const { ref, createApp, compilerOptions } = Vue;
+
+      const app = createApp({
+        setup() {
+          const count = ref(0);
+          const message = ref("Valor Inicial");
+          const placeholder = ref("placeholder");
+          const increment = () => {
+            console.log("Outer Vue Click");
+            count.value++;
+            placeholder.value = "placeholder " + count.value;
+          };
+
+          const submittedForm = (evt) => {
+            evt.preventDefault();
+            console.log(evt)
+          }
+          return {
+            count,
+            message,
+            placeholder,
+            increment,
+            submittedForm
+          };
+        },
+      });
+      app.config.compilerOptions.isCustomElement = (tag) => tag.includes("-");
+      app.mount("#app");
+    </script>
+  </body>
+</html>
