@@ -1,11 +1,6 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <script type="module" src="../esm/polyfills//index.js"></script>
-
-    <script type="module" src="../esm/albs.js"></script>
-    <script type="module" src="../esm/index-19825f49.js"></script>
-
     <script src="https://unpkg.com/react@16.7.0/umd/react.production.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/emotion@9.2.12/dist/emotion.umd.min.js"></script>
     <script src="https://unpkg.com/react-dom@16.7.0/umd/react-dom.production.min.js"></script>
@@ -21,6 +16,9 @@
           count: 0,
           myValue: "Initial Value",
         };
+        fun = (myValue) => {
+          this.setState({ myValue });
+        };
         render() {
           const { myValue, count } = this.state;
           const onClick = () => {
@@ -30,32 +28,14 @@
             this.setState({ count: current + 1 });
           };
 
-          const handleChange = (event) => {
-            this.setState({ myValue: event.target.value });
-          };
-
-          const handleSubmit = (event) => {
-            alert("A name was submitted: " + this.state.value);
-            event.preventDefault();
-          };
-
           return (
             <div class="container">
+              Value: {myValue}
               <br />
+              <albs-input value={myValue} onChange={this.fun}></albs-input>
               <albs-button onClick={onClick}>
                 Web Component Button {count}
               </albs-button>
-              <hr />
-              <h2>Form</h2> - {myValue}
-              <form onSubmit={handleSubmit}>
-                <input type="text" value={myValue} onChange={handleChange} />
-                <input type="email" required />
-                <albs-input type="text"value={myValue} onChange={handleChange}> </albs-input>
-                <albs-input type="search" required="true"> </albs-input>
-
-                <albs-button type="submit">Submit</albs-button>
-                <albs-button type="reset">Reset</albs-button>
-              </form>
             </div>
           );
         }
@@ -63,5 +43,7 @@
 
       ReactDOM.render(<App />, document.querySelector("#root"));
     </script>
+    <script src="../../components/input.js"></script>
+    <script src="../../components/button.js"></script>
   </body>
 </html>
