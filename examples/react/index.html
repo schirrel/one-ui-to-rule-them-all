@@ -16,7 +16,8 @@
           count: 0,
           myValue: "Initial Value",
         };
-        fun = (myValue) => {
+        change = (myValue) => {
+          console.log("change", myValue);
           this.setState({ myValue });
         };
         render() {
@@ -32,7 +33,7 @@
             <div class="container">
               Value: {myValue}
               <br />
-              <albs-input value={myValue} onChange={this.fun}></albs-input>
+              <albs-input value={myValue} onChange={this.change}></albs-input>
               <albs-button onClick={onClick}>
                 Web Component Button {count}
               </albs-button>
@@ -46,6 +47,10 @@
     <script
       type="module"
       src="../../components/albs-button/dist/index.js"
+    ></script>
+    <script
+      type="module"
+      src="../../components/albs-input/dist/index.js"
     ></script>
   </body>
 </html>
