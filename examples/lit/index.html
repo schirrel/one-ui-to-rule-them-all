@@ -2,7 +2,16 @@
 <html>
   <head>
     <meta charset="UTF-8" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cairo:wght@500;700;800&display=swap"
+      rel="stylesheet"
+    />
     <style>
+      body {
+        font-family: "Cairo", sans-serif;
+      }
       a {
         margin: 4px;
         padding: 8px 4px;
@@ -16,12 +25,35 @@
         background-color: coral;
         color: white;
       }
+      img {
+        max-height: 60px;
+      }
+      header {
+        display: flex;
+        gap: 10px;
+      }
+      h1{
+        margin: 0;
+      }
+      h2 {
+        font-size: 20px;
+        margin-bottom: 4px;
+      }
     </style>
   </head>
 
   <body>
-    <a href="./vue/index.html">Vue</a>
-    <a href="./react/index.html">React</a>
-    <a href="./javascript/index.html">Javascript</a>
-  </body>
+    <header>
+      <img
+      src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB3aWR0aD0iMjU2cHgiIGhlaWdodD0iMzIwcHgiIHZpZXdCb3g9IjAgMCAyNTYgMzIwIiB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHByZXNlcnZlQXNwZWN0UmF0aW89InhNaWRZTWlkIj4KICAgIDx0aXRsZT5MaXQ8L3RpdGxlPgogICAgPGc+CgkJCQk8cG9seWdvbiBmaWxsPSIjMDBFOEZGIiBwb2ludHM9IjY0IDE5MiA4OS45MjU3MDMxIDE0Ny4yNzI1OTggMTI4LjE1ODc2IDEyOC4xNTg3NiAxOTIuMTMzMDQ3IDE5Mi4xMzMwNDcgMjAyLjk2NjA1NSAyNTMuODg2OTczIDE5MiAzMjAgMTI4IDI1NiA4OS45MjU3MDMxIDIzMC4zODUxMTciPjwvcG9seWdvbj4KCQkJCTxwYXRoIGQ9Ik0xMjgsMjU2IEwxMjgsMTI4IEwxOTIsNjQgTDE5MiwxOTIgTDEyOCwyNTYgWiBNMCwyNTYgTDY0LDMyMCBMNzMuMjAxNjQwNiwyNTkuMzk4MzAxIEw2NCwxOTIgTDI2LjQ1Nzc5MywyMTUuNzA5MTk5IEwwLDI1NiBaIiBmaWxsPSIjMjgzMTk4Ij48L3BhdGg+CgkJCQk8cGF0aCBkPSJNNjQsMTkyIEw2NCw2NCBMMTI4LDAgTDEyOCwxMjggTDY0LDE5MiBaIE0xOTIsMzIwIEwxOTIsMTkyIEwyNTYsMTI4IEwyNTYsMjU2IEwxOTIsMzIwIFogTTAsMjU2IEwwLDEyOCBMNjQsMTkyIEwwLDI1NiBaIiBmaWxsPSIjMzI0RkZGIj48L3BhdGg+CgkJCQk8cG9seWdvbiBmaWxsPSIjMDBGRkZGIiBwb2ludHM9IjY0IDMyMCA2NCAxOTIgMTI4IDI1NiI+PC9wb2x5Z29uPgogICAgPC9nPgo8L3N2Zz4K"
+      />
+      <h1>Lit</h1>
+    </header>
+
+    <nav>
+      <h2>Choose Framework:</h2>
+      <a href="./vue/index.html">Vue</a>
+      <a href="./react/index.html">React</a>
+      <a href="./javascript/index.html">Javascript</a>
+    </nav>
 </html>
