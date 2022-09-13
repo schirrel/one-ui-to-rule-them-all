@@ -3,25 +3,136 @@
   <head>
     <meta charset="UTF-8" />
     <style>
-      a {
-        margin: 4px;
-        padding: 8px 4px;
-        text-decoration: none;
-        font-weight: 900;
-        font-family: Arial, Helvetica, sans-serif;
-        color: coral;
-        background-color: white;
+      body {
+        display: flex;
+        flex-direction: column;
+        font-family: "Cairo", sans-serif;
+        padding: 10px 40px;
+        gap: 30px;
+        min-height: 100vh;
       }
+      section {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 20px;
+        max-width: 90%;
+        margin: 0 auto;
+      }
+      article {
+        border: 1px solid cornflowerblue;
+        border-radius: 20px;
+        min-height: 100px;
+        padding: 20px;
+        text-align: center;
+        outline-style: solid;
+        outline-width: 1px;
+        outline-color: dodgerblue;
+        transition: outline 300ms ease;
+      }
+      article:hover {
+        border-color: transparent;
+        outline-width: 6px;
+        outline-offset: 4px;
+      }
+
+      img {
+        max-height: 60px;
+      }
+      h1,
+      h2 {
+        margin: 0;
+      }
+      nav {
+        display: flex;
+        gap: 18px;
+        justify-content: center;
+      }
+
+      a {
+        color: crimson;
+        text-decoration: none;
+      }
+
       a:hover {
-        background-color: coral;
-        color: white;
+        color: tomato;
+        text-decoration: underline;
+      }
+      header {
+        text-align: center;
+      }
+      p {
+        margin: 0;
       }
     </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cairo:wght@500;700;800&display=swap"
+      rel="stylesheet"
+    />
   </head>
 
   <body>
-    <a href="./examples/vue/index.html">Vue</a>
-    <a href="./examples/react/index.html">React</a>
-    <a href="./examples/javascript/index.html">Javascript</a>
+    <header>
+      <h1>One UI to rule them all</h1>
+      <p>A study about writing and creating Web Components</p>
+    </header>
+
+    <main>
+      <p>
+        This study aims to undertand web components lifecycle and creating. Also
+        see the good and the pain points of using web components to create a
+        design system that works for both React an VueJS.
+      </p>
+
+      <p>
+        Here will be create components that are commmon used for web
+        applications, undertands the challengs of it and the way to pass beyond
+        it.
+      </p>
+    </main>
+   
+    <section>
+      <article>
+        <img
+          src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYxIiBoZWlnaHQ9IjEzMiIgdmlld0JveD0iMCAwIDE2MSAxMzIiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IHgxPSIwJSIgeTE9IjUwJSIgeTI9IjUwJSIgaWQ9ImEiPjxzdG9wIHN0b3AtY29sb3I9IiMyQTNCOEYiIG9mZnNldD0iMCUiLz48c3RvcCBzdG9wLWNvbG9yPSIjMjlBQkUyIiBvZmZzZXQ9IjEwMCUiLz48L2xpbmVhckdyYWRpZW50PjxsaW5lYXJHcmFkaWVudCB4MT0iMCUiIHkxPSI1MCUiIHkyPSI1MCUiIGlkPSJiIj48c3RvcCBzdG9wLWNvbG9yPSIjMkEzQjhGIiBvZmZzZXQ9IjAlIi8+PHN0b3Agc3RvcC1jb2xvcj0iIzI5QUJFMiIgb2Zmc2V0PSIxMDAlIi8+PC9saW5lYXJHcmFkaWVudD48bGluZWFyR3JhZGllbnQgeDE9IjEwMCUiIHkxPSI1MCUiIHgyPSIwJSIgeTI9IjUwJSIgaWQ9ImMiPjxzdG9wIHN0b3AtY29sb3I9IiNCNEQ0NEUiIG9mZnNldD0iMCUiLz48c3RvcCBzdG9wLWNvbG9yPSIjRTdGNzE2IiBvZmZzZXQ9IjEwMCUiLz48L2xpbmVhckdyYWRpZW50PjxsaW5lYXJHcmFkaWVudCB4MT0iMTAwJSIgeTE9IjUwJSIgeDI9IjAlIiB5Mj0iNTAlIiBpZD0iZCI+PHN0b3Agc3RvcC1jb2xvcj0iI0I0RDQ0RSIgb2Zmc2V0PSIwJSIvPjxzdG9wIHN0b3AtY29sb3I9IiNFN0Y3MTYiIG9mZnNldD0iMTAwJSIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxnIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+PHBhdGggZmlsbD0iIzE2NkRBNSIgZD0iTTE2MC42IDY1LjlsLTE3LjQgMjkuMy0yNC40LTI5LjcgMjQuNC0yOC45eiIvPjxwYXRoIGZpbGw9IiM4RkRCNjkiIGQ9Ik0xNDEuMyAxMDAuMmwtMjYuNS0zMS43LTE1LjkgMjYuNiAyNC43IDM2LjF6Ii8+PHBhdGggZmlsbD0iIzE2NkRBNSIgZD0iTTE0MSAzMS40bC0yNi4yIDMxLjgtMTUuOS0yNi42TDEyMy42Ljl6Ii8+PHBhdGggZmlsbD0idXJsKCNhKSIgb3BhY2l0eT0iLjk1IiBkPSJNNjEuMSAzMS40SDE0MUwxMjMuNC45SDc4Ljd6Ii8+PHBhdGggZmlsbD0idXJsKCNiKSIgb3BhY2l0eT0iLjk1IiBkPSJNMTE0LjggNjMuM0gxNTlsLTE1LjktMjYuOEg5OC44Ii8+PHBhdGggZmlsbD0idXJsKCNjKSIgb3BhY2l0eT0iLjk1IiBkPSJNMTQxLjMgMTAwLjNINjFsMTcuNiAzMC41aDQ1eiIvPjxwYXRoIGZpbGw9IiMwMTAxMDEiIGQ9Ik03OC42IDEzMC44TDQxIDY1LjggNzkuMS44SDM3LjlMLjQgNjUuOGwzNy41IDY1eiIvPjxwYXRoIGZpbGw9InVybCgjZCkiIG9wYWNpdHk9Ii45NSIgZD0iTTExNC44IDY4LjRIMTU5bC0xNS45IDI2LjhIOTguOCIvPjwvZz48L3N2Zz4="
+        />
+        <h2>Web Components</h2>
+        <p>Simple and pure only with Platform API.</p>
+        <small
+          >Made by
+          <strong>W3C</strong>
+          and <strong>Google</strong></small
+        >
+        <nav>
+          <a href="https://www.webcomponents.org/" target="_blank"> About </a>
+          <a href="/examples/vanilla-js"> The Study</a>
+        </nav>
+      </article>
+      <article>
+        <img
+          src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB3aWR0aD0iMjU2cHgiIGhlaWdodD0iMTk3cHgiIHZpZXdCb3g9IjAgMCAyNTYgMTk3IiB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHByZXNlcnZlQXNwZWN0UmF0aW89InhNaWRZTWlkIj4KICAgIDx0aXRsZT5TdGVuY2lsPC90aXRsZT4KICAgIDxnPgogICAgICAgIDxwYXRoIGQ9Ik0xOTMuMDY1MzU0LDEzOC40OTUwMTUgTDEzOS43MzE2OTIsMTk2LjkyMzA3NyBMNDEuNTk4NTIzMSwxOTYuOTIzMDc3IEw5NC40MDEwODMxLDEzOC40OTUwMTUgTDE5My4wNjUzNTQsMTM4LjQ5NTAxNSBaIE0yNTYsNjkuMjQ3NjA2MiBMMjAyLjY5NDg5MiwxMjcuNjc1MDc3IEwwLDEyNy42NzUwNzcgTDUzLjMwNTMwNDYsNjkuMjQ3NjA2MiBMMjU2LDY5LjI0NzYwNjIgWiBNMjE0LjM5OTAxNSwyLjEzMTYyODIxZS0xNCBMMTYxLjMxMTUwOCw1OC40Mjc3NjYyIEw2Mi45MzI2NzY5LDU4LjQyNzc2NjIgTDExNi4wOTg5NTQsMi4xMzE2MjgyMWUtMTQgTDIxNC4zOTkwMTUsMi4xMzE2MjgyMWUtMTQgWiIgZmlsbD0iIzAwMDAwMCI+PC9wYXRoPgogICAgPC9nPgo8L3N2Zz4K"
+        />
+        <h2>Stencil</h2>
+        <p>Web Components made easy with help of StencilJS</p>
+        <small>Made by <strong>Ionic</strong></small>
+        <nav>
+          <a href="https://stenciljs.com/ " target="_blank"> About </a>
+          <a href="/examples/stencil"> The Study</a>
+        </nav>
+      </article>
+      <article>
+        <img
+          src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB3aWR0aD0iMjU2cHgiIGhlaWdodD0iMzIwcHgiIHZpZXdCb3g9IjAgMCAyNTYgMzIwIiB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHByZXNlcnZlQXNwZWN0UmF0aW89InhNaWRZTWlkIj4KICAgIDx0aXRsZT5MaXQ8L3RpdGxlPgogICAgPGc+CgkJCQk8cG9seWdvbiBmaWxsPSIjMDBFOEZGIiBwb2ludHM9IjY0IDE5MiA4OS45MjU3MDMxIDE0Ny4yNzI1OTggMTI4LjE1ODc2IDEyOC4xNTg3NiAxOTIuMTMzMDQ3IDE5Mi4xMzMwNDcgMjAyLjk2NjA1NSAyNTMuODg2OTczIDE5MiAzMjAgMTI4IDI1NiA4OS45MjU3MDMxIDIzMC4zODUxMTciPjwvcG9seWdvbj4KCQkJCTxwYXRoIGQ9Ik0xMjgsMjU2IEwxMjgsMTI4IEwxOTIsNjQgTDE5MiwxOTIgTDEyOCwyNTYgWiBNMCwyNTYgTDY0LDMyMCBMNzMuMjAxNjQwNiwyNTkuMzk4MzAxIEw2NCwxOTIgTDI2LjQ1Nzc5MywyMTUuNzA5MTk5IEwwLDI1NiBaIiBmaWxsPSIjMjgzMTk4Ij48L3BhdGg+CgkJCQk8cGF0aCBkPSJNNjQsMTkyIEw2NCw2NCBMMTI4LDAgTDEyOCwxMjggTDY0LDE5MiBaIE0xOTIsMzIwIEwxOTIsMTkyIEwyNTYsMTI4IEwyNTYsMjU2IEwxOTIsMzIwIFogTTAsMjU2IEwwLDEyOCBMNjQsMTkyIEwwLDI1NiBaIiBmaWxsPSIjMzI0RkZGIj48L3BhdGg+CgkJCQk8cG9seWdvbiBmaWxsPSIjMDBGRkZGIiBwb2ludHM9IjY0IDMyMCA2NCAxOTIgMTI4IDI1NiI+PC9wb2x5Z29uPgogICAgPC9nPgo8L3N2Zz4K"
+        />
+        <h2>Lit</h2>
+        <p>Using the Lit library for building web components.</p>
+        <small>Made by <strong>Google</strong></small>
+        <nav>
+          <a href="https://lit.dev/" target="_blank"> About </a>
+          <a href="/examples/lit"> The Study</a>
+        </nav>
+      </article>
+    </section>
   </body>
 </html>
