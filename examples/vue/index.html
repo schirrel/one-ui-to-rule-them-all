@@ -1,0 +1,33 @@
+<html>
+  <body>
+    <div id="app">
+      {{message}}
+      <albs-input
+        v-model="message"
+        :placeholder="placeholder"
+        type="text"
+        required
+      >
+      </albs-input>
+      <albs-button @click="increment">
+        Web Component Button {{ count }}</albs-button
+      >
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script>
+    <script src="vue.js"></script>
+    
+    <script>
+
+      
+    </script>
+
+    <!-- <script
+      type="module"
+      src="../../components/albs-button/dist/index.js"
+    ></script>
+    <script
+      type="module"
+      src="../../components/albs-input/dist/index.js"
+    ></script> -->
+  </body>
+</html>
