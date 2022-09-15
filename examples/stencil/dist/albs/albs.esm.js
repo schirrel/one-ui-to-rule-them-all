@@ -1,0 +1,1 @@
+import{p as e,b as d}from"./p-c398c419.js";(()=>{const d=import.meta.url,p={};return""!==d&&(p.resourcesUrl=new URL(".",d).href),e(p)})().then((e=>d([["p-2dd75603",[[1,"albs-button",{type:[1],loading:[1540],disabled:[1540]}]]],["p-3df5fec4",[[1,"albs-input",{placeholder:[1],disabled:[1540],required:[1540],value:[1032],inputmode:[1],type:[1]}]]]],e)));

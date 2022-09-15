@@ -19,10 +19,11 @@
 
 ## Events
 
-| Event           | Description | Type                                  |
-| --------------- | ----------- | ------------------------------------- |
-| `changeEmitter` |             | `CustomEvent<InputChangeEventDetail>` |
-| `inputEmitter`  |             | `CustomEvent<any>`                    |
+| Event                | Description | Type                                  |
+| -------------------- | ----------- | ------------------------------------- |
+| `changeEmitter`      |             | `CustomEvent<any>`                    |
+| `inputChangeEmitter` |             | `CustomEvent<InputChangeEventDetail>` |
+| `inputEmitter`       |             | `CustomEvent<any>`                    |
 
 
 ----------------------------------------------
