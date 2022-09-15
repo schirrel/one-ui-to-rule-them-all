@@ -25,44 +25,8 @@
         Web Component Button <span> 0 </span></albs-button
       >
     </form>
-
-    <script
-      type="module"
-      src="../../components/albs-button/dist/index.js"
-    ></script>
-    <script
-      type="module"
-      src="../../components/albs-input/dist/index.js"
-    ></script>
-
-    <script>
-      const type = window.location.search.replace("?", "");
-      if (!type) window.location.href = window.location.origin;
-      switch (type) {
-      }
-    </script>
-    <script>
-      let increment = 0;
-      const button = document.querySelector("#button");
-      const submit = document.querySelector("#submit");
-      const input = document.querySelector("albs-input");
-
-      const form = document.querySelector("form");
-      const span = document.querySelector("span");
-
-      button.addEventListener("click", (event) => {
-        console.log("Outer click");
-        increment++;
-        span.innerText = increment;
-      });
-
-      submit.addEventListener("submit", (event) => {
-        console.log("Outer click - submit");
-      });
-
-      input.addEventListener("input", (event) => {
-        console.log("Outer click - input", event);
-      });
-    </script>
+   
+    <script src="javascript.js"></script>
+    <script src="../app.js"></script>
   </body>
 </html>

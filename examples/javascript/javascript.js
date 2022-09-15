@@ -1,5 +1,3 @@
-
-console.log("loaded hehe")
 let increment = 0;
 const button = document.querySelector("#button");
 const submit = document.querySelector("#submit");
