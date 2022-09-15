@@ -1,4 +1,7 @@
 <html>
+  <head>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+  </head>
   <body>
     <div id="app">
       {{message}}
@@ -13,12 +16,13 @@
         Web Component Button {{ count }}</albs-button
       >
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script>
     <script src="vue.js"></script>
-    
-    <script>
 
-      
+    <script>
+      const type = window.location.search.replace("?", "");
+      if (!type) window.location.href = window.location.origin;
+      switch (type) {
+      }
     </script>
 
     <!-- <script

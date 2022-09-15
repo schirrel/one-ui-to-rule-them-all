@@ -1,0 +1,36 @@
+<html>
+  <body>
+    <ul>
+      <li><a target="_self" href="#vue">Vue</a></li>
+      <li><a target="_self" href="#react">React</a></li>
+      <li><a target="_self" href="#javascript">None</a></li>
+    </ul>
+
+    <script>
+      const search = window.location.search.replace("?", "");
+
+      const initialize = () => {
+        const hash = window.location.hash.replace("#", "");
+
+        if (search && hash) {
+          console.log(search, hash);
+
+          window.location.href = window.location.origin + window.location.pathname+ `${hash}?${search}`
+        }
+      };
+
+      window.addEventListener("popstate", initialize);
+
+      initialize();
+    </script>
+
+    <!-- <script
+      type="module"
+      src="../../components/albs-button/dist/index.js"
+    ></script>
+    <script
+      type="module"
+      src="../../components/albs-input/dist/index.js"
+    ></script> -->
+  </body>
+</html>
