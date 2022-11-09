@@ -4,26 +4,31 @@ class App extends React.Component {
     myValue: "Initial Value",
   };
   change = (myValue) => {
-    console.log("change", myValue);
     this.setState({ myValue });
   };
   render() {
     const { myValue, count } = this.state;
     const onClick = () => {
-      console.log("Outer React Click");
-
       const current = this.state.count;
       this.setState({ count: current + 1 });
     };
 
     return (
       <div class="container">
-        Value: {myValue}
-        <br />
-        <albs-input value={myValue} onChange={this.change}></albs-input>
-        <albs-button onClick={onClick}>
-          Web Component Button {count}
-        </albs-button>
+        <form>
+          Value: {myValue}
+          <br />
+          <albs-input value={myValue} onChange={this.change}></albs-input>
+          <albs-button id="submit" type="submit">
+            Web Component Button - Submit
+          </albs-button>
+          <albs-button id="reset" type="reset">
+            Web Component Button - reset
+          </albs-button>
+          <albs-button onClick={onClick}>
+            Web Component Button {count}
+          </albs-button>
+        </form>
       </div>
     );
   }

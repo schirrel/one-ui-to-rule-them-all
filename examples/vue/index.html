@@ -4,6 +4,7 @@
   </head>
   <body>
     <div id="app">
+      <form action="" @submit.prevent="submittedForm">
       {{message}}
       <albs-input
         v-model="message"
@@ -12,9 +13,16 @@
         required
       >
       </albs-input>
+      <albs-button id="submit" type="submit"
+      >Web Component Button - Submit</albs-button
+    >
+    <albs-button id="reset" type="reset"
+      >Web Component Button - reset</albs-button
+    >
       <albs-button @click="increment">
         Web Component Button {{ count }}</albs-button
       >
+    </form>
     </div>
     <script src="vue.js"></script>
     <script src="../app.js"></script>

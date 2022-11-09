@@ -83,7 +83,6 @@ class AlbsInput extends s {
         this.__value = null;
     }
     set value(value) {
-        console.log("value change");
         const oldValue = this.__value;
         this.__value = value;
         this.requestUpdate("value", oldValue);

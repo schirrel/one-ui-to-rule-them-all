@@ -11,12 +11,10 @@ class ALBSInput extends HTMLElement {
     const self = this;
 
     props.forEach((prop) => {
-      console.log(prop, this[`_${prop}`]);
       if (self[`_${prop}`]) self.input[prop] = self[`_${prop}`];
     });
 
     propsIfEmptyTrue.forEach((prop) => {
-      console.log(prop, this[`_${prop}`]);
       if (self.hasOwnProperty([`_${prop}`])) {
         self.input[prop] = self[`_${prop}`];
       }

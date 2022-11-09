@@ -6,14 +6,14 @@ const app = createApp({
     const message = ref("Valor Inicial");
     const placeholder = ref("placeholder");
     const increment = () => {
-      console.log("Outer Vue Click");
+      // console.log("Outer Vue Click");
       count.value++;
       placeholder.value = "placeholder " + count.value;
     };
 
     const submittedForm = (evt) => {
       evt.preventDefault();
-      console.log(evt);
+      // console.log(evt);
     };
     return {
       count,

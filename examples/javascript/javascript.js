@@ -7,12 +7,13 @@ const form = document.querySelector("form");
 const span = document.querySelector("span");
 
 button.addEventListener("click", (event) => {
-  console.log("Outer click");
+  // console.log("Outer click");
   increment++;
   span.innerText = increment;
 });
 
 submit.addEventListener("submit", (event) => {
+  event.preventDefault()
   console.log("Outer click - submit");
 });
 

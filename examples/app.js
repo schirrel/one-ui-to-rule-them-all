@@ -1,4 +1,5 @@
 
+
       const type = window.location.search.replace("?", "");
       if (!type) window.location.href = window.location.origin;
 
@@ -16,9 +17,10 @@
         stencil: () => {
           return new Promise((resolve) => {
             createScript([
-              "../tool/stencil/dist/esm/polyfills/index.js",
-              "../tool/stencil/dist/esm/albs.js",
-              "../tool/stencil/dist/esm/index-f6ea0d03.js",
+              // "../tool/stencil/dist/esm/polyfills/index.js",
+              // "../tool/stencil/dist/esm/albs.js",
+              // "../tool/stencil/dist/esm/index-f6ea0d03.js",
+              "../tool/stencil/dist/albs/albs.esm.js",
             ]).then(() => {
               resolve();
             });

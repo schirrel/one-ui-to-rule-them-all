@@ -67,7 +67,6 @@ class AlbsButton extends s {
         this.loading = false;
     }
     render() {
-        console.log(this.type, this.disabled);
         return $ `
       <button @click=${this.handleClick}
       ?disabled="${this.disabled}"
@@ -81,7 +80,6 @@ class AlbsButton extends s {
     `;
     }
     handleClick(event) {
-        console.log("handleClick");
         event.stopPropagation();
         if (this.loading || this.disabled)
             return;
@@ -94,7 +92,6 @@ class AlbsButton extends s {
                 break;
             case "reset":
                 if (form) {
-                    console.log(form);
                     form.reset();
                 }
                 else {
